@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dompetku - Catatan Keuangan Pribadi</title>
+
+  <!-- Font dari Google Fonts (butuh internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Menghubungkan HTML ke file CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- ===== HEADER DAN MENU ===== -->
+    <header class="sidebar">
+      <a class="logo" href="#ringkasan">Dompetku</a>
+      <nav aria-label="Menu utama">
+        <a href="#ringkasan" class="aktif">Ringkasan</a>
+        <a href="#tambah">Tambah transaksi</a>
+        <a href="#riwayat">Riwayat</a>
+        <a href="#kategori">Pengeluaran per kategori</a>
+      </nav>
+      <p class="tip">Menabung 20% dari pemasukan adalah awal yang baik.</p>
+    </header>
+
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main class="konten">
+
+      <header class="judul">
+        <h1>Halo, Team Five</h1>
+        <p>Keuangan kamu bulan Oktober 2026</p>
+      </header>
+
+      <!-- Ringkasan saldo -->
+      <section id="ringkasan" class="ringkasan" aria-label="Ringkasan keuangan">
+        <div class="saldo">
+          <p>Saldo saat ini</p>
+          <h2>Rp 4.250.000</h2>
+          <div class="grafik" aria-label="Pengeluaran 6 bulan terakhir">
+            <div><span>Mei</span></div>
+            <div><span>Jun</span></div>
+            <div><span>Jul</span></div>
+            <div><span>Agu</span></div>
+            <div><span>Sep</span></div>
+            <div class="sekarang"><span>Okt</span></div>
+          </div>
+        </div>
+
+        <div class="kartu">
+          <p>Pemasukan</p>
+          <h3 class="masuk">Rp 5.000.000</h3>
+        </div>
+        <div class="kartu">
+          <p>Pengeluaran</p>
+          <h3 class="keluar">Rp 2.350.000</h3>
+        </div>
+        <div class="kartu">
+          <p>Ditabung</p>
+          <h3>Rp 1.000.000</h3>
+        </div>
+      </section>
+
+      <!-- Form tambah transaksi -->
+      <section id="tambah" class="panel">
+        <h2>Tambah transaksi</h2>
+        <form class="form">
+          <label>Jenis
+            <select>
+              <option>Pengeluaran</option>
+              <option>Pemasukan</option>
+            </select>
+          </label>
+          <label>Nama transaksi
+            <input type="text" placeholder="Contoh: Makan siang">
+          </label>
+          <label>Jumlah (Rp)
+            <input type="number" placeholder="25000">
+          </label>
+          <label>Kategori
+            <select>
+              <option>Makanan</option>
+              <option>Transportasi</option>
+              <option>Belanja</option>
+              <option>Tagihan</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+          <label>Tanggal
+            <input type="date">
+          </label>
+          <button type="button">Simpan transaksi</button>
+        </form>
+      </section>
+
+      <!-- Tabel riwayat -->
+      <section id="riwayat" class="panel">
+        <h2>Riwayat transaksi</h2>
+        <div class="tabel-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Transaksi</th>
+                <th>Kategori</th>
+                <th class="kanan">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21 Okt</td>
+                <td>Makan siang</td>
+                <td><span class="label makanan">Makanan</span></td>
+                <td class="kanan keluar">- Rp 35.000</td>
+              </tr>
+              <tr>
+                <td>20 Okt</td>
+                <td>Ojek online</td>
+                <td><span class="label transport">Transportasi</span></td>
+                <td class="kanan keluar">- Rp 28.000</td>
+              </tr>
+              <tr>
+                <td>18 Okt</td>
+                <td>Proyek desain freelance</td>
+                <td><span class="label gaji">Pemasukan</span></td>
+                <td class="kanan masuk">+ Rp 1.500.000</td>
+              </tr>
+              <tr>
+                <td>15 Okt</td>
+                <td>Tagihan listrik</td>
+                <td><span class="label tagihan">Tagihan</span></td>
+                <td class="kanan keluar">- Rp 450.000</td>
+              </tr>
+              <tr>
+                <td>12 Okt</td>
+                <td>Sepatu olahraga</td>
+                <td><span class="label belanja">Belanja</span></td>
+                <td class="kanan keluar">- Rp 320.000</td>
+              </tr>
+              <tr>
+                <td>1 Okt</td>
+                <td>Gaji bulanan</td>
+                <td><span class="label gaji">Pemasukan</span></td>
+                <td class="kanan masuk">+ Rp 3.500.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Kategori -->
+      <section id="kategori" class="panel">
+        <h2>Pengeluaran per kategori</h2>
+        <ul class="kategori">
+          <li>
+            <div class="baris"><span>Tagihan</span><span>Rp 900.000</span></div>
+          </li>
+          <li>
+            <div class="baris"><span>Makanan</span><span>Rp 650.000</span></div>
+          </li>
+          <li>
+            <div class="baris"><span>Belanja</span><span>Rp 520.000</span></div>
+          </li>
+          <li>
+            <div class="baris"><span>Transportasi</span><span>Rp 280.000</span></div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>Dompetku, tugas Ekonomi 2026</footer>
+    </main>
+  </div>
+
+</body>
+</html>
